@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PD Creative Studio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <div class="app">
+    <header>
+      <p class="eyebrow">PD AURUM SCENTS</p>
+      <h1>PD Creative Studio</h1>
+      <p class="subtitle">เครื่องมือช่วยสร้าง Prompt ภาพสินค้า ภาพโฆษณา และคอนเทนต์แบรนด์</p>
+    </header>
+
+    <main class="grid">
+      <section class="panel">
+        <h2>สร้าง Prompt</h2>
+
+        <label>ประเภทงาน</label>
+        <select id="contentType">
+          <option value="giftset">Gift Set Diffuser</option>
+          <option value="perfume">Perfume Product Photo</option>
+          <option value="hotel">Hotel / Spa B2B</option>
+          <option value="etsy">Etsy Wall Art</option>
+          <option value="mockup">Mockup</option>
+        </select>
+
+        <label>สินค้า / สิ่งที่ต้องการให้เห็น</label>
+        <input id="subject" type="text" placeholder="เช่น Premium Gift Set Diffuser" />
+
+        <label>โทนภาพ</label>
+        <select id="mood">
+          <option value="warm luxury">Warm Luxury</option>
+          <option value="minimal premium">Minimal Premium</option>
+          <option value="soft beige">Soft Beige</option>
+          <option value="spa relaxing">Spa Relaxing</option>
+          <option value="romantic gift">Romantic Gift</option>
+        </select>
+
+        <label>สถานที่ / ฉากหลัง</label>
+        <input id="background" type="text" placeholder="เช่น hotel front desk, spa reception, luxury room" />
+
+        <label>ข้อความบนภาพ ถ้ามี</label>
+        <textarea id="textOnImage" placeholder="ใส่ข้อความที่อยากให้มีบนภาพ หรือเว้นว่างไว้"></textarea>
+
+        <button onclick="generatePrompt()">Generate Prompt</button>
+      </section>
+
+      <section class="panel output">
+        <h2>Prompt ที่ได้</h2>
+        <textarea id="resultPrompt" readonly placeholder="Prompt จะขึ้นตรงนี้..."></textarea>
+
+        <div class="btn-row">
+          <button onclick="copyPrompt()">Copy Prompt</button>
+          <button class="secondary" onclick="clearForm()">Clear</button>
+        </div>
+
+        <div class="note">
+          <strong>วิธีใช้:</strong> คัดลอก Prompt นี้ไปวางใน Bing Image Creator, Leonardo, Ideogram, Canva AI หรือเว็บเจนภาพอื่น ๆ
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
